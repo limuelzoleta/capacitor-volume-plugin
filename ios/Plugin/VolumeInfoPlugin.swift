@@ -15,4 +15,10 @@ public class VolumeInfoPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+    
+    @objc func getSystemVolume(_ call: CAPPluginCall) {
+        let volume = implementation.getSystemVolume();
+        call.resolve(["volume":volume]);
+        
+    }
 }
